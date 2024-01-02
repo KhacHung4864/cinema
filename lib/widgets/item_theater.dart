@@ -1,0 +1,69 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_cinema_app/resource/fonts/app_fonts.dart';
+
+class ItemTheater extends StatelessWidget {
+  const ItemTheater({
+    super.key,
+    required this.text,
+    required this.padding,
+    required this.onTap,
+    required this.isSelected,
+  });
+
+  final String text;
+
+  final EdgeInsetsGeometry padding;
+  final Function() onTap;
+  final bool isSelected;
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: onTap,
+      child: Container(
+        margin: const EdgeInsets.only(right: 20),
+        decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(10),
+            gradient: isSelected
+                ? LinearGradient(
+                    colors: [const Color(0xffFE53BB), const Color(0xffFE53BB).withOpacity(0)],
+                    begin: Alignment.topLeft,
+                    end: Alignment.bottomRight,
+                  )
+                : LinearGradient(
+                    colors: [const Color(0xff09FBD3), const Color(0xff09fbd3).withOpacity(0)],
+                    begin: Alignment.topLeft,
+                    end: Alignment.bottomRight,
+                  )),
+        child: Padding(
+          padding: const EdgeInsets.all(2),
+          child: Container(
+            width: 85,
+            decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(10),
+                gradient: isSelected
+                    ? const LinearGradient(
+                        colors: [Color(0xffB6116B), Color(0xff2E1371)],
+                        begin: Alignment.topLeft,
+                        end: Alignment.bottomRight,
+                      )
+                    : const LinearGradient(
+                        colors: [Color(0xff2E1371), Color(0x0ff1232f)],
+                        begin: Alignment.topLeft,
+                        end: Alignment.bottomRight,
+                      )),
+            child: Padding(
+              padding: padding,
+              child: Center(
+                child: Text(
+                  text,
+                  style: AppFonts.poppins500(12, const Color(0xffffffff).withOpacity(0.87)),
+                ),
+              ),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
