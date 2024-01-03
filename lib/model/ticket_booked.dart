@@ -1,3 +1,5 @@
+// ignore_for_file: no_leading_underscores_for_local_identifiers
+
 class TicketBookedModel {
   String? id;
   String? roomId;
@@ -31,48 +33,20 @@ class TicketBookedModel {
       this.createdAt});
 
   TicketBookedModel.fromJson(Map<String, dynamic> json) {
-    if (json["id"] is String) {
-      id = json["id"];
-    }
-    if (json["roomId"] is String) {
-      roomId = json["roomId"];
-    }
-    if (json["userId"] is String) {
-      userId = json["userId"];
-    }
-    if (json["userInfo"] is Map) {
-      userInfo = json["userInfo"] == null ? null : UserInfo.fromJson(json["userInfo"]);
-    }
-    if (json["filmId"] is String) {
-      filmId = json["filmId"];
-    }
-    if (json["filmInfo"] is Map) {
-      filmInfo = json["filmInfo"] == null ? null : FilmInfo.fromJson(json["filmInfo"]);
-    }
-    if (json["scheduleId"] is String) {
-      scheduleId = json["scheduleId"];
-    }
-    if (json["scheduleInfo"] is Map) {
-      scheduleInfo = json["scheduleInfo"] == null ? null : ScheduleInfo.fromJson(json["scheduleInfo"]);
-    }
-    if (json["seat"] is List) {
-      seat = json["seat"] == null ? null : List<int>.from(json["seat"]);
-    }
-    if (json["showTime"] is String) {
-      showTime = json["showTime"];
-    }
-    if (json["showDate"] is int) {
-      showDate = json["showDate"];
-    }
-    if (json["price"] is int) {
-      price = json["price"];
-    }
-    if (json["paid"] is bool) {
-      paid = json["paid"];
-    }
-    if (json["createdAt"] is int) {
-      createdAt = json["createdAt"];
-    }
+    id = json["id"];
+    roomId = json["roomId"];
+    userId = json["userId"];
+    userInfo = json["userInfo"] == null ? null : UserInfo.fromJson(json["userInfo"]);
+    filmId = json["filmId"];
+    filmInfo = json["filmInfo"] == null ? null : FilmInfo.fromJson(json["filmInfo"]);
+    scheduleId = json["scheduleId"];
+    scheduleInfo = json["scheduleInfo"] == null ? null : ScheduleInfo.fromJson(json["scheduleInfo"]);
+    seat = json["seat"] == null ? null : List<int>.from(json["seat"]);
+    showTime = json["showTime"];
+    showDate = json["showDate"];
+    price = json["price"];
+    paid = json["paid"];
+    createdAt = json["createdAt"];
   }
 
   Map<String, dynamic> toJson() {
@@ -113,37 +87,25 @@ class ScheduleInfo {
   int? endTime;
   int? nSeat;
   int? createdAt;
+  int? roomNum;
+  int? theater;
+  String? theaterStr;
 
-  ScheduleInfo({this.id, this.filmId, this.romId, this.showTime, this.showDate, this.startTime, this.endTime, this.nSeat, this.createdAt});
+  ScheduleInfo({this.id, this.filmId, this.romId, this.showTime, this.showDate, this.startTime, this.endTime, this.nSeat, this.createdAt, this.roomNum, this.theater, this.theaterStr});
 
   ScheduleInfo.fromJson(Map<String, dynamic> json) {
-    if (json["id"] is String) {
-      id = json["id"];
-    }
-    if (json["filmId"] is String) {
-      filmId = json["filmId"];
-    }
-    if (json["romId"] is String) {
-      romId = json["romId"];
-    }
-    if (json["showTime"] is List) {
-      showTime = json["showTime"] == null ? null : List<String>.from(json["showTime"]);
-    }
-    if (json["showDate"] is int) {
-      showDate = json["showDate"];
-    }
-    if (json["startTime"] is int) {
-      startTime = json["startTime"];
-    }
-    if (json["endTime"] is int) {
-      endTime = json["endTime"];
-    }
-    if (json["nSeat"] is int) {
-      nSeat = json["nSeat"];
-    }
-    if (json["createdAt"] is int) {
-      createdAt = json["createdAt"];
-    }
+    id = json["id"];
+    filmId = json["filmId"];
+    romId = json["romId"];
+    showTime = json["showTime"] == null ? null : List<String>.from(json["showTime"]);
+    showDate = json["showDate"];
+    startTime = json["startTime"];
+    endTime = json["endTime"];
+    nSeat = json["nSeat"];
+    createdAt = json["createdAt"];
+    roomNum = json["roomNum"];
+    theater = json["theater"];
+    theaterStr = json["theaterStr"];
   }
 
   Map<String, dynamic> toJson() {
@@ -159,6 +121,9 @@ class ScheduleInfo {
     _data["endTime"] = endTime;
     _data["nSeat"] = nSeat;
     _data["createdAt"] = createdAt;
+    _data["roomNum"] = roomNum;
+    _data["theater"] = theater;
+    _data["theaterStr"] = theaterStr;
     return _data;
   }
 }
@@ -202,57 +167,23 @@ class FilmInfo {
       this.schedule});
 
   FilmInfo.fromJson(Map<String, dynamic> json) {
-    if (json["id"] is String) {
-      id = json["id"];
-    }
-    if (json["name"] is String) {
-      name = json["name"];
-    }
-    if (json["slug"] is String) {
-      slug = json["slug"];
-    }
-    if (json["description"] is String) {
-      description = json["description"];
-    }
-    if (json["content"] is String) {
-      content = json["content"];
-    }
-    if (json["videoUrl"] is String) {
-      videoUrl = json["videoUrl"];
-    }
-    if (json["thumbnail"] is String) {
-      thumbnail = json["thumbnail"];
-    }
-    if (json["category"] is List) {
-      category = json["category"] == null ? null : List<String>.from(json["category"]);
-    }
-    if (json["director"] is List) {
-      director = json["director"] == null ? null : List<String>.from(json["director"]);
-    }
-    if (json["actor"] is List) {
-      actor = json["actor"] == null ? null : List<String>.from(json["actor"]);
-    }
-    if (json["language"] is String) {
-      language = json["language"];
-    }
-    if (json["startTime"] is int) {
-      startTime = json["startTime"];
-    }
-    if (json["runningTime"] is int) {
-      runningTime = json["runningTime"];
-    }
-    if (json["endTime"] is int) {
-      endTime = json["endTime"];
-    }
-    if (json["heartTotal"] is int) {
-      heartTotal = json["heartTotal"];
-    }
-    if (json["status"] is int) {
-      status = json["status"];
-    }
-    if (json["schedule"] is List) {
-      schedule = json["schedule"] ?? [];
-    }
+    id = json["id"];
+    name = json["name"];
+    slug = json["slug"];
+    description = json["description"];
+    content = json["content"];
+    videoUrl = json["videoUrl"];
+    thumbnail = json["thumbnail"];
+    category = json["category"] == null ? null : List<String>.from(json["category"]);
+    director = json["director"] == null ? null : List<String>.from(json["director"]);
+    actor = json["actor"] == null ? null : List<String>.from(json["actor"]);
+    language = json["language"];
+    startTime = json["startTime"];
+    runningTime = json["runningTime"];
+    endTime = json["endTime"];
+    heartTotal = json["heartTotal"];
+    status = json["status"];
+    schedule = json["schedule"] ?? [];
   }
 
   Map<String, dynamic> toJson() {
@@ -329,67 +260,28 @@ class UserInfo {
       this.passwordResetExpires});
 
   UserInfo.fromJson(Map<String, dynamic> json) {
-    if (json["id"] is String) {
-      id = json["id"];
-    }
-    if (json["name"] is String) {
-      name = json["name"];
-    }
-    if (json["avatar"] is String) {
-      avatar = json["avatar"];
-    }
-    if (json["loginCode"] is int) {
-      loginCode = json["loginCode"];
-    }
-    if (json["email"] is String) {
-      email = json["email"];
-    }
-    if (json["phoneNumber"] is String) {
-      phoneNumber = json["phoneNumber"];
-    }
-    if (json["password"] is String) {
-      password = json["password"];
-    }
-    if (json["address"] is String) {
-      address = json["address"];
-    }
-    if (json["googleId"] is String) {
-      googleId = json["googleId"];
-    }
-    if (json["birth"] is String) {
-      birth = json["birth"];
-    }
-    if (json["gender"] is int) {
-      gender = json["gender"];
-    }
-    if (json["registerDate"] is int) {
-      registerDate = json["registerDate"];
-    }
-    if (json["token"] is String) {
-      token = json["token"];
-    }
-    if (json["lastLogin"] is int) {
-      lastLogin = json["lastLogin"];
-    }
-    if (json["status"] is int) {
-      status = json["status"];
-    }
-    if (json["userRole"] is int) {
-      userRole = json["userRole"];
-    }
-    if (json["passwordChangeAt"] is int) {
-      passwordChangeAt = json["passwordChangeAt"];
-    }
-    if (json["passwordResetToken"] is String) {
-      passwordResetToken = json["passwordResetToken"];
-    }
-    if (json["passwordResetExpires"] is int) {
-      passwordResetExpires = json["passwordResetExpires"];
-    }
+    id = json["id"];
+    name = json["name"];
+    avatar = json["avatar"];
+    loginCode = json["loginCode"];
+    email = json["email"];
+    phoneNumber = json["phoneNumber"];
+    password = json["password"];
+    address = json["address"];
+    googleId = json["googleId"];
+    birth = json["birth"];
+    gender = json["gender"];
+    registerDate = json["registerDate"];
+    token = json["token"];
+    lastLogin = json["lastLogin"];
+    status = json["status"];
+    userRole = json["userRole"];
+    passwordChangeAt = json["passwordChangeAt"];
+    passwordResetToken = json["passwordResetToken"];
+    passwordResetExpires = json["passwordResetExpires"];
   }
 
   Map<String, dynamic> toJson() {
-    // ignore: no_leading_underscores_for_local_identifiers
     final Map<String, dynamic> _data = <String, dynamic>{};
     _data["id"] = id;
     _data["name"] = name;

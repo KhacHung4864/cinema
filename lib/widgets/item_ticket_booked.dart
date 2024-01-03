@@ -5,7 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gradient_borders/box_borders/gradient_box_border.dart';
 
 class ItemTicketBooked extends StatelessWidget {
-  const ItemTicketBooked({super.key, required this.movie, required this.name, required this.time, required this.category, required this.seated, this.showTime, required this.price});
+  const ItemTicketBooked({super.key, required this.movie, required this.name, required this.time, required this.category, required this.seated, this.showTime, required this.price, this.place});
 
   final String movie;
   final String name;
@@ -14,6 +14,7 @@ class ItemTicketBooked extends StatelessWidget {
   final List<int>? seated;
   final String? showTime;
   final int? price;
+  final String? place;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -55,6 +56,12 @@ class ItemTicketBooked extends StatelessWidget {
                 ),
                 SizedBox(
                   height: 5.w,
+                ),
+                Expanded(
+                  child: Text(
+                    'Place: $place',
+                    style: AppFonts.poppins500(10.sp, AppTheme.white),
+                  ),
                 ),
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,

@@ -68,6 +68,7 @@ class _TicketState extends State<Ticket> {
                                   child: Container(
                                     margin: const EdgeInsets.only(bottom: 20),
                                     child: ItemTicketBooked(
+                                        place: e.scheduleInfo?.theaterStr ?? '',
                                         seated: e.seat,
                                         price: e.price,
                                         showTime: e.showTime,

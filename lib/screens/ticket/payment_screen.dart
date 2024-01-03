@@ -228,6 +228,16 @@ class _PaymentScreenState extends State<PaymentScreen> {
                                 );
                                 return;
                               }
+                              showMyDialog(
+                                context,
+                                title: 'Thông báo !',
+                                content: 'Đặt vé thành công',
+                                noButton: false,
+                                buttonOneText: 'Xác nhận',
+                                onPressButtonOne: () {
+                                  Navigator.pop(context);
+                                },
+                              );
                             },
                           );
                         },
